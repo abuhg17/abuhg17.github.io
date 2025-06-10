@@ -1,14 +1,19 @@
+const confetti = window.confetti;
+
 const app = Vue.createApp({
   data() {
     return {
       num: Array(22).fill(0),
       myText: "草包鋒兄T恤販售未達標",
       ver: Vue.version,
+      myInterval: null,
+      isConfetti: true,
     };
   },
   methods: {
     auto() {
-      setInterval(() => {
+      if (this.myInterval) return;
+      const myInterval = setInterval(() => {
         if (this.num.reduce((a, b) => a + b, 0) < 100000) {
           this.num[0] += Math.floor(
             Math.floor((Math.random() * 150 * 250) / 2400)
@@ -35,6 +40,12 @@ const app = Vue.createApp({
           }
         } else {
           this.myText = "十萬件達標";
+          if (this.isConfetti) {
+            confetti({});
+            this.isConfetti = false;
+          }
+          clearInterval(myInterval);
+          this.myInterval = null;
         }
       }, 1000);
     },
