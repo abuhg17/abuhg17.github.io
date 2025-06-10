@@ -8,6 +8,7 @@ const app = Vue.createApp({
       ver: Vue.version,
       myInterval: null,
       isConfetti: true,
+      animate: "animate__animated animate__zoomInUp",
     };
   },
   methods: {
@@ -40,6 +41,7 @@ const app = Vue.createApp({
           }
         } else {
           this.myText = "十萬件達標";
+          this.animate = "animate__animated animate__flip";
           if (this.isConfetti) {
             confetti({});
             this.isConfetti = false;
