@@ -7,15 +7,19 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <script src="app.js" defer></script>
   </head>
   <body>
     <div id="app">
       <div>
-        <div class="num">
+        <div class="num" >
           <h1>{{num.reduce((a, b) => a + b, 0)}}</h1>
           {{auto()}}
-          <h2>{{myText}}</h2>
+          <h2 class="animate__animated animate__bounce">{{myText}}</h2>
           <h3>Vue {{ver}}</h3>
           <h4>臺北:{{num[0]}}</h4>
           <h4>新北:{{num[1]}}</h4>
