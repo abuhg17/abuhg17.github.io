@@ -12,10 +12,12 @@
     <div id="app">
       <div>
         <div class="num">
-          <h1>{{num}}</h1>
+          <h1>{{num.reduce((a, b) => a + b, 0)}}</h1>
           {{auto()}}
           <h2>{{myText}}</h2>
           <h3>Vue {{ver}}</h3>
+          <h4>臺北:{{num[0]}} | 新北:{{num[1]}} | 桃園:{{num[2]}}</h4>
+          <h4>臺中:{{num[3]}} | 臺南:{{num[4]}} | 高雄:{{num[5]}}</h4>
         </div>
       </div>
     </div>

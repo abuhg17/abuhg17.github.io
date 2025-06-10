@@ -1,7 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
-      num: 0,
+      num: Array(22).fill(0),
       myText: "草包鋒兄T恤販售未達標",
       ver: Vue.version,
     };
@@ -9,8 +9,30 @@ const app = Vue.createApp({
   methods: {
     auto() {
       setInterval(() => {
-        if (this.num < 100000) {
-          this.num++;
+        if (this.num.reduce((a, b) => a + b, 0) < 100000) {
+          this.num[0] += Math.floor(
+            Math.floor((Math.random() * 150 * 250) / 2400)
+          );
+          this.num[1] += Math.floor(
+            Math.floor((Math.random() * 200 * 400) / 2400)
+          );
+          this.num[2] += Math.floor(
+            Math.floor((Math.random() * 300 * 250) / 2400)
+          );
+          this.num[3] += Math.floor(
+            Math.floor((Math.random() * 200 * 270) / 2400)
+          );
+          this.num[4] += Math.floor(
+            Math.floor((Math.random() * 150 * 180) / 2400)
+          );
+          this.num[5] += Math.floor(
+            Math.floor((Math.random() * 200 * 250) / 2400)
+          );
+          for (let i = 6; i < 22; i++) {
+            this.num[i] += Math.floor(
+              Math.floor((Math.random() * 75 * 980) / 2400 / 16)
+            );
+          }
         } else {
           this.myText = "十萬件達標";
         }
