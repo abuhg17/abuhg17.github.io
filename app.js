@@ -9,7 +9,12 @@ const app = Vue.createApp({
       myInterval: null,
       isConfetti: true,
       animate: "animate__animated animate__zoomInUp",
+      isLoading: true,
     };
+  },
+  mounted() {
+    this.isLoading = false;
+    this.auto();
   },
   methods: {
     auto() {
