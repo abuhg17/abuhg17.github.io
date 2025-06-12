@@ -10,6 +10,7 @@ const app = Vue.createApp({
       isConfetti: true,
       animate: "animate__animated animate__zoomInUp",
       isLoading: true,
+      speed: 1,
     };
   },
   mounted() {
@@ -17,8 +18,20 @@ const app = Vue.createApp({
     this.auto();
   },
   methods: {
+    TenSpeed() {
+      this.auto();
+      this.auto();
+      this.auto();
+      this.auto();
+      this.auto();
+      this.auto();
+      this.auto();
+      this.auto();
+      this.auto();
+      this.auto();
+      if (this.speed < 100) this.speed *= 10;
+    },
     auto() {
-      if (this.myInterval) return;
       const myInterval = setInterval(() => {
         if (this.num.reduce((a, b) => a + b, 0) < 100000) {
           this.num[0] += Math.floor(

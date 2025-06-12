@@ -40,6 +40,7 @@
               width="100px"
             />
           </p>
+          <button @click="TenSpeed" class="speed">{{speed}}X</button>
           <h1>{{num.reduce((a, b) => a + b, 0)}}</h1>
           <h2 v-bind:class="animate">{{myText}}</h2>
           <p>
