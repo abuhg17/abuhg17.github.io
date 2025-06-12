@@ -14,8 +14,13 @@ const app = Vue.createApp({
     };
   },
   mounted() {
-    this.isLoading = false;
-    this.auto();
+    // 等畫面真正載入再關閉 loading
+    this.$nextTick(() => {
+      requestAnimationFrame(() => {
+        this.isLoading = false;
+        this.auto(); // 開始跑模擬
+      });
+    });
   },
   methods: {
     TenSpeed() {
