@@ -17,6 +17,26 @@
     <div id="app">
       <div>
         <div class="num">
+          <img
+            src="9ed35a46-9d95-4376-bd47-a267b49a22c0.png"
+            alt="粉絲一"
+            title="粉絲一"
+            width="100px"
+          />
+          {{" "}}
+          <img
+            src="dc4e1702-42f6-4d28-ae9c-46cf288d5c7d.png"
+            alt="粉絲二"
+            title="粉絲二"
+            width="100px"
+          />
+          {{" "}}
+          <img
+            src="d2a0cf5c-a4dd-4763-95b6-6e1110fa7281.png"
+            alt="粉絲三"
+            title="粉絲三"
+            width="100px"
+          />
           <h1>{{num.reduce((a, b) => a + b, 0)}}</h1>
           {{auto()}}
           <h2 v-bind:class="animate">{{myText}}</h2>
