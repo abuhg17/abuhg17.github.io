@@ -14,9 +14,12 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <div id="app" v-cloak>
-      <div v-if="isLoading">Loading ...</div>
-      <div v-else>
+    <div id="app">
+      <div v-if="isLoading">
+        <div class="lds-facebook"><div></div><div></div><div></div></div>
+        </div>
+      
+      <div v-else v-cloak>
         <div class="num">
           <p>
             <img
