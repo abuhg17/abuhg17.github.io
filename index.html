@@ -4,82 +4,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue 3 Example</title>
-
-    <!-- Animate.css -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+        <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@3.1.3/dist/index.min.js"></script>
 
-    <!-- Toast Notification CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/vue-toast-notification@3.1.3/dist/theme-bootstrap.min.css"
       rel="stylesheet"
     />
-
-    <!-- Style -->
-    <link rel="stylesheet" type="text/css" href="style.css" />
-
-    <!-- Vue 3 -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-    <!-- Vue Toast Notification -->
-    <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@3.1.3/dist/index.min.js"></script>
-
-    <!-- Canvas Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-
-    <!-- Your App Script -->
     <script src="app.js" defer></script>
   </head>
   <body>
     <div id="app">
-      <!-- Loading Spinner -->
       <div v-if="isLoading">
         <div class="lds-facebook"><div></div><div></div><div></div></div>
-      </div>
-
-      <!-- Main Content -->
+        </div>
+      
       <div v-else v-cloak>
         <div class="num">
-          <!-- 粉絲圖示 -->
           <p>
-            <img src="9ed35a46-9d95-4376-bd47-a267b49a22c0.png" width="100px" />
-            <img src="dc4e1702-42f6-4d28-ae9c-46cf288d5c7d.png" width="100px" />
-            <img src="d2a0cf5c-a4dd-4763-95b6-6e1110fa7281.png" width="100px" />
+            <img
+              src="9ed35a46-9d95-4376-bd47-a267b49a22c0.png"
+              alt="粉絲一"
+              title="粉絲一"
+              width="100px"
+            />
+            {{" "}}
+            <img
+              src="dc4e1702-42f6-4d28-ae9c-46cf288d5c7d.png"
+              alt="粉絲二"
+              title="粉絲二"
+              width="100px"
+            />
+            {{" "}}
+            <img
+              src="d2a0cf5c-a4dd-4763-95b6-6e1110fa7281.png"
+              alt="粉絲三"
+              title="粉絲三"
+              width="100px"
+            />
+          </p>
+                   <p>
+  <input type="text" value="以下為模擬結果，詳情以2037~2038年為準!" readonly style="width:37ch;">
+</p>
+          <h2 v-bind:class="animate">{{myText}}</h2>
+          <button @click="TenSpeed()" class="speed">{{speed}}X</button>
+          <h1>{{num.reduce((a, b) => a + b, 0)}}</h1>
+          <p>
+            <img
+              src="ec6a52ef-397a-481d-a1c2-4336dabc2eb5.png"
+              alt="T-Shirt"
+              title="T-Shirt"
+              width="300px"
+            />
           </p>
 
-          <!-- 加速按鈕與總數 -->
-          <button @click="TenSpeed()" class="speed">{{speed}}X</button>
-          <h1>{{ num.reduce((a, b) => a + b, 0) }}</h1>
-
-          <!-- 動畫文字 -->
-          <h2 :class="animate">{{ myText }}</h2>
-
-          <!-- T-Shirt 與贈品 -->
-          <p><img src="ec6a52ef-397a-481d-a1c2-4336dabc2eb5.png" width="300px" /></p>
-          <img src="f56a77b4-342b-4624-aaee-0a1eefda1c02 (1).png" width="300px" />
-
-          <!-- Vue 版本 -->
-          <h3>Vue {{ ver }}</h3>
-
-          <!-- 城市統計 -->
-          <h4>臺北:{{ num[0] }}</h4>
-          <h4>新北:{{ num[1] }}</h4>
-          <h4>桃園:{{ num[2] }}</h4>
-          <h4>臺中:{{ num[3] }}</h4>
-          <h4>臺南:{{ num[4] }}</h4>
-          <h4>高雄:{{ num[5] }}</h4>
-
-          <!-- 動畫倒數與煙火 -->
+          <img
+            src="f56a77b4-342b-4624-aaee-0a1eefda1c02 (1).png"
+            alt="贈品"
+            title="贈品"
+            width="300px"
+          />
+          <h3>Vue {{ver}}</h3>
+          <h4>臺北:{{num[0]}}</h4>
+          <h4>新北:{{num[1]}}</h4>
+          <h4>桃園:{{num[2]}}</h4>
+          <h4>臺中:{{num[3]}}</h4>
+          <h4>臺南:{{num[4]}}</h4>
+          <h4>高雄:{{num[5]}}</h4>
           <p>
             <h6>下任101董事長就是你/妳，交辦事項，5，4，3，2，1，十秒草包鋒兄字樣，2040。</h6>
-            <img src="21c67f20-84c2-4646-bec3-b9fa233b8b0b.png" width="150px" />
-            <img src="63cc7480-d6a0-4504-9a35-89b83d254198.png" width="150px" />
+            <img
+              src="21c67f20-84c2-4646-bec3-b9fa233b8b0b.png"
+              alt="煙火"
+              title="煙火"
+              width="150px"
+            />
+            <img
+              src="63cc7480-d6a0-4504-9a35-89b83d254198.png"
+              alt="煙火2"
+              title="煙火2"
+              width="150px"
+            />
           </p>
-
-          <!-- 紅布條 -->
-          <img src="41debbc7-e26c-402d-8d29-7fa1b06441b7.png" width="300px" />
+          <img
+            src="41debbc7-e26c-402d-8d29-7fa1b06441b7.png"
+            alt="紅布條"
+            title="紅布條"
+            width="300px"
+          />
         </div>
       </div>
     </div>
