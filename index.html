@@ -21,10 +21,19 @@
   </head>
   <body>
     <div id="app">
+                          <h1>輪播圖片</h1>
+  <button @click="SubstractIndex">←</button>
+  <img
+    :src="GetImg(myIndex)"
+    :alt="GetAlt(myIndex)"
+    :title="GetTitle(myIndex)"
+    width="auto"
+    height="100px"
+  />
+  <button @click="AddIndex">→</button>
       <div v-if="isLoading">
         <div class="lds-facebook"><div></div><div></div><div></div></div>
         </div>
-      
       <div v-else v-cloak>
         <div class="num">
           <p>
