@@ -1,5 +1,7 @@
 const confetti = window.confetti;
-
+document.addEventListener("DOMContentLoaded", function () {
+  new Splide("#image-carousel").mount();
+});
 const app = Vue.createApp({
   data() {
     return {
@@ -69,29 +71,29 @@ const app = Vue.createApp({
     }, 5000);
   },
   methods: {
-    GetImg(index) {
-      return this.images[index].img;
-    },
-    GetAlt(index) {
-      return this.images[index].alt;
-    },
-    GetTitle(index) {
-      return this.images[index].title;
-    },
-    AddIndex() {
-      if (this.myIndex < this.images.length - 1) {
-        this.myIndex++;
-      } else {
-        this.myIndex = 0;
-      }
-    },
-    SubstractIndex() {
-      if (this.myIndex > 0) {
-        this.myIndex--;
-      } else {
-        this.myIndex = this.images.length - 1;
-      }
-    },
+    // GetImg(index) {
+    //   return this.images[index].img;
+    // },
+    // GetAlt(index) {
+    //   return this.images[index].alt;
+    // },
+    // GetTitle(index) {
+    //   return this.images[index].title;
+    // },
+    // AddIndex() {
+    //   if (this.myIndex < this.images.length - 1) {
+    //     this.myIndex++;
+    //   } else {
+    //     this.myIndex = 0;
+    //   }
+    // },
+    // SubstractIndex() {
+    //   if (this.myIndex > 0) {
+    //     this.myIndex--;
+    //   } else {
+    //     this.myIndex = this.images.length - 1;
+    //   }
+    // },
     TenSpeed() {
       this.auto();
       this.auto();

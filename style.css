@@ -58,3 +58,7 @@
     height: 32px;
   }
 }
+.splide__slide img {
+  width: auto;
+  height: 300px;
+}
